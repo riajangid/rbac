@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2>Student Dashboard</h2>
+    <table>
+        <tr>
+            <th>Amount Paid</th>
+            <th>Total Fee</th>
+        </tr>
+        {% for fee in fee_status %}
+        <tr>
+            <td>{{ fee.amount_paid }}</td>
+            <td>{{ fee.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

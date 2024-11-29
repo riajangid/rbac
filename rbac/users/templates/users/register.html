@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="role_id">Role:</label>
+        <select name="role_id">
+            <option value="1">Teacher</option>
+            <option value="2">Student</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

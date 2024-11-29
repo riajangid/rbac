@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2>Teacher Dashboard</h2>
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Amount Paid</th>
+            <th>Total Fee</th>
+        </tr>
+        {% for fee in fees %}
+        <tr>
+            <td>{{ fee.student.username }}</td>
+            <td>{{ fee.amount_paid }}</td>
+            <td>{{ fee.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
